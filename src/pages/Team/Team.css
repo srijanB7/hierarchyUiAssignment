@@ -1,0 +1,53 @@
+.team-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    align-items: center;
+    padding: 3rem;
+    height: 85%;
+    font-weight: bold;
+}
+
+.team-header {
+    padding: 1rem;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.team-leader {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.team-members {
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.member {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.add-member-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 24;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    padding: 2rem;
+    justify-content: space-between;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,68 @@
+.employee-tree {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem;
+    
+    height: 85%;
+    font-weight: bold;
+}
+
+.ceo-details {
+    text-align: center;
+    border: 1px solid black;
+    padding: 1rem;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.departments {
+    display: flex;
+    padding-top: 10px;
+    gap: 40px;
+}
+
+.department {
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.department > p {
+    text-align: center;
+}
+
+.add-team-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 24;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    padding: 2rem 4rem;
+    gap: 20px;
+}
+
+.add-team-input-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-tree > button {
+    margin-top: 50px;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: tomato;
+    
+}
+
+.error-msg {
+    color: tomato;
+}

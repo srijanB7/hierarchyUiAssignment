@@ -1,0 +1,39 @@
+.employee-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    height: 85%;
+    font-weight: bold;
+}
+
+.employee-container > button {
+    margin-top: 50px;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: tomato;
+}
+
+.edit-employee {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 24;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    padding: 2rem;
+    justify-content: space-between;
+}
+
+.edit-employee-field {
+    display: flex;
+    flex-direction: column;
+}
