@@ -4,7 +4,6 @@ import { dept_data, employeesData } from "../data/employeeData";
 export const EmployeeContext = createContext();
 
 export const EmployeeProvider = ({ children }) => {
-    
     const [employees, setEmployees] = useState(
         JSON.parse(localStorage.getItem("employees")) ?? employeesData
     );
@@ -56,10 +55,27 @@ export const EmployeeProvider = ({ children }) => {
             }
         });
         setDepartmentData(updatedDepartmentData);
-        localStorage.setItem("departmentData", JSON.stringify(updatedDepartmentData));
+        localStorage.setItem(
+            "departmentData",
+            JSON.stringify(updatedDepartmentData)
+        );
     }
 
     function addEmployee(empDetail, teamId) {
+        departments.forEach((department) => {
+            let currDept = departmentData["CEO"].departments[
+                department
+            ]
+            let team = currDept.teams.find((team) => team.teamId === teamId);
+            
+            if (team !== undefined) {
+                if (department === "HR") {
+                    empDetail.designation = "Sales";
+                } else if (department === "Head of Engineering")
+                    empDetail.designation = "Engineer";
+                else empDetail.designation = "Designer";
+            }
+        });
         const updatedEmployees = [...employees, empDetail];
         setEmployees(updatedEmployees);
         localStorage.setItem("employees", JSON.stringify(updatedEmployees));
@@ -81,7 +97,10 @@ export const EmployeeProvider = ({ children }) => {
                     });
             }
         });
-        localStorage.setItem("departmentData", JSON.stringify(updatedDepartmentData));
+        localStorage.setItem(
+            "departmentData",
+            JSON.stringify(updatedDepartmentData)
+        );
         setDepartmentData(updatedDepartmentData);
     }
 
@@ -90,7 +109,10 @@ export const EmployeeProvider = ({ children }) => {
         updatedDepartmentData["CEO"].departments[chosenDepartment].teams.push(
             teamDetails
         );
-        localStorage.setItem("departmentData", JSON.stringify(updatedDepartmentData));
+        localStorage.setItem(
+            "departmentData",
+            JSON.stringify(updatedDepartmentData)
+        );
         setDepartmentData(updatedDepartmentData);
         const updatedEmployees = [...employees, leaderDetails];
         localStorage.setItem("employees", JSON.stringify(updatedEmployees));
@@ -134,7 +156,10 @@ export const EmployeeProvider = ({ children }) => {
                 }
             });
             setDepartmentData(updatedDepartmentData);
-            localStorage.setItem("departmentData", JSON.stringify(updatedDepartmentData));
+            localStorage.setItem(
+                "departmentData",
+                JSON.stringify(updatedDepartmentData)
+            );
         }
     }
 

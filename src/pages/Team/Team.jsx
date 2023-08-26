@@ -14,7 +14,6 @@ export const Team = () => {
     team.members.forEach((member) =>
         teamMembers.push(employees.find((employee) => employee.id == member))
     );
-    console.log(team)
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -22,7 +21,7 @@ export const Team = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
-    const [designation, setDesignation] = useState("");
+    
     function handleAddMember(event) {
         event.preventDefault();
         handleClose();
@@ -31,7 +30,7 @@ export const Team = () => {
             name,
             phone,
             email,
-            designation
+            
         };
         addEmployee(memberDetails, team.teamId);
         setName("");
@@ -93,15 +92,7 @@ export const Team = () => {
                                 onChange={(e) => setPhone(e.target.value)}
                             />
                         </div>
-                        <div className="input-field">
-                            <label>Designation</label>
-                            <input
-                                type="text"
-                                required
-                                value={designation}
-                                onChange={(e) => setDesignation(e.target.value)}
-                            />
-                        </div>
+                        
                         <div className="input-field">
                             <label>Email</label>
                             <input
