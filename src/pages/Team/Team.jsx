@@ -59,6 +59,7 @@ export const Team = () => {
                                 {member.name}
                             </Link>
                             <button
+                                className="delete-btn"
                                 onClick={() =>
                                     removeEmployee(member.id, team.teamId)
                                 }
@@ -68,7 +69,7 @@ export const Team = () => {
                         </div>
                     )): <p>No Team Members! Add Team Members</p>}
                 </div>
-                <button onClick={handleOpen}>Add Member</button>
+                <button onClick={handleOpen} className="add-member-btn">Add Member</button>
                 <Modal open={open} onClose={handleClose}>
                     <form
                         className="add-member-modal"

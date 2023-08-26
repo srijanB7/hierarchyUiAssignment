@@ -3,15 +3,15 @@ import "./Navbar.css";
 import { UseEmployee } from "../../contexts/EmployeeContext";
 import { Link } from "react-router-dom";
 
-export const Navbar = ({id}) => {
+export const Navbar = ({ id }) => {
     const { employees } = UseEmployee();
     const [searchResults, setSearchResults] = useState([]);
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
-        setSearchText("")
+        setSearchText("");
         setSearchResults([]);
-    }, [id])
+    }, [id]);
     function handleChange(event) {
         setSearchText(event.target.value);
         if (event.target.value === "") {
@@ -23,17 +23,20 @@ export const Navbar = ({id}) => {
                 (employee) =>
                     employee.name
                         .toLowerCase()
-                        .includes(event.target.value.toLowerCase()) 
-                        ||
-                    employee.phone.includes(event.target.value)
+                        .includes(event.target.value.toLowerCase()) ||
+                    employee.phone.includes(event.target.value) ||
+                    employee.email
+                        .toLowerCase()
+                        .includes(event.target.value.toLowerCase())
             )
         );
     }
-    
 
     return (
         <nav>
-            <Link to="/"><h1>Random HQ</h1></Link>
+            <Link to="/">
+                <h1>Random HQ</h1>
+            </Link>
             <input
                 type="text"
                 placeholder="search for employee by name, number and email"

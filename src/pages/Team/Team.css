@@ -29,6 +29,10 @@
     margin-top: 5px;
     margin-bottom: 10px;
     text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    align-items: center;
 }
 
 .add-member-modal {
@@ -50,4 +54,22 @@
 .input-field {
     display: flex;
     flex-direction: column;
+}
+
+.delete-btn {
+    border: none;
+    background-color: black;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.add-member-btn {
+    margin-top: 50px;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: tomato;
 }
