@@ -135,7 +135,7 @@ export const Home = () => {
                             />
                         </div>
 
-                        <button>Add Team</button>
+                        <button className="modal-btn" type="submit">Add Team</button>
                     </form>
                 </Modal>
             </main>

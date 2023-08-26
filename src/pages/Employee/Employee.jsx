@@ -85,7 +85,7 @@ export const Employee = () => {
                                 </select>
                             </div>
                         )}
-                        <button>Save Changes</button>
+                        <button className="modal-btn" type="submit">Save Changes</button>
                     </form>
                 </Modal>
             </main>

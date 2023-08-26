@@ -103,7 +103,7 @@ export const Team = () => {
                             />
                         </div>
 
-                        <button type="submit">Submit</button>
+                        <button type="submit" className="modal-btn">Submit</button>
                     </form>
                 </Modal>
             </main>
